@@ -2,6 +2,12 @@
     link:
       create: true
       relink: true
-  
+
+- create:
+  - ~/.config/nvim
+
 - link:
-    ~/.config/nvim: nvim
+    ~/.config/nvim:
+      path: nvim/*
+      glob: true
+
