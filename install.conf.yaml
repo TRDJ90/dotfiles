@@ -11,3 +11,7 @@
       path: nvim/*
       glob: true
 
+    ~/.config/alacritty:
+      path: alacritty/*
+      glob: true
+
