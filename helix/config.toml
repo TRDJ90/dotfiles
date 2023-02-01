@@ -1,0 +1,47 @@
+theme = "github_dark_dimmed"
+
+[editor]
+line-number = "relative"
+mouse = false
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+true-color = true
+auto-completion = true
+auto-format = true
+rulers = [115]
+auto-pairs = true
+scrolloff = 5
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode"]
+center = ["file-name"]
+right = ["diagnostics", "position", "file-type", "file-encoding"]
+#mode.normal = "NORMAL"
+#mode.insert = "INSERT"
+#mode.select = "SELECT"
+
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
+display-signature-help-docs = true
+
+[editor.whitespace.render]
+space = "none"
+tab = "none"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[editor.search]
+smart-case = true
+wrap-around = false

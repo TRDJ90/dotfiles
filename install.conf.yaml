@@ -5,13 +5,22 @@
 
 - create:
   - ~/.config/nvim
+  - ~/.config/alacritty
+  - ~/.config/starship
+  - ~/.config/nushell
 
 - link:
     ~/.config/nvim:
       path: nvim/*
       glob: true
 
-    ~/.config/alacritty:
-      path: alacritty/*
+    ~/.config/alacritty/alacritty.yml:
+      path: alacritty/alacritty.yml
+
+    ~/.config/starship/starship.toml:
+      path: starship/starship.toml
+
+    ~/.config/nushell:
+      path: nushell/*
       glob: true
 
