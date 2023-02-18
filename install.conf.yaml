@@ -8,6 +8,7 @@
   - ~/.config/alacritty
   - ~/.config/starship
   - ~/.config/nushell
+  - ~/.config/helix
 
 - link:
     ~/.config/nvim:
@@ -20,7 +21,11 @@
     ~/.config/starship/starship.toml:
       path: starship/starship.toml
 
-    ~/.config/nushell:
+    ~/Library/Application Support/nushell:
       path: nushell/*
+      glob: true
+
+    ~/.config/helix:
+      path: helix/*
       glob: true
 

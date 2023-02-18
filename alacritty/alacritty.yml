@@ -10,8 +10,8 @@ window:
   decorations: "full"
   opacity: 1.00
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
 
 # github Alacritty Colors
 colors:
