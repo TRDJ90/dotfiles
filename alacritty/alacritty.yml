@@ -6,42 +6,45 @@ font:
     family: "FiraCode Nerd Font Mono"
     style: Retina
 
-window: 
+window:
   decorations: "full"
   opacity: 1.00
   padding:
-    x: 0
-    y: 0
+    x: 6
+    y: 2
 
 # github Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '0x24292e'
-    foreground: '0xd1d5da'
+    background: "0x24292e"
+    foreground: "0xd1d5da"
 
   # Normal colors
   normal:
-    black:   '0x586069'
-    red:     '0xea4a5a'
-    green:   '0x34d058'
-    yellow:  '0xffea7f'
-    blue:    '0x2188ff'
-    magenta: '0xb392f0'
-    cyan:    '0x39c5cf'
-    white:   '0xd1d5da'
+    black: "0x586069"
+    red: "0xea4a5a"
+    green: "0x34d058"
+    yellow: "0xffea7f"
+    blue: "0x2188ff"
+    magenta: "0xb392f0"
+    cyan: "0x39c5cf"
+    white: "0xd1d5da"
 
   # Bright colors
   bright:
-    black:   '0x959da5'
-    red:     '0xf97583'
-    green:   '0x85e89d'
-    yellow:  '0xffea7f'
-    blue:    '0x79b8ff'
-    magenta: '0xb392f0'
-    cyan:    '0x56d4dd'
-    white:   '0xfafbfc'
+    black: "0x959da5"
+    red: "0xf97583"
+    green: "0x85e89d"
+    yellow: "0xffea7f"
+    blue: "0x79b8ff"
+    magenta: "0xb392f0"
+    cyan: "0x56d4dd"
+    white: "0xfafbfc"
 
   indexed_colors:
-    - { index: 16, color: '0xd18616' }
-    - { index: 17, color: '0xf97583' }
+    - { index: 16, color: "0xd18616" }
+    - { index: 17, color: "0xf97583" }
+# https://github.com/zellij-org/zellij/issues/1729
+# https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+# https://www.rapidtables.com/convert/number/decimal-to-hex.html

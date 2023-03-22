@@ -4,11 +4,9 @@
       relink: true
 
 - create:
-  - ~/.config/nvim
-  - ~/.config/alacritty
-  - ~/.config/starship
-  - ~/.config/nushell
-  - ~/.config/helix
+    - ~/.config/alacritty
+    - ~/.config/starship
+    - ~/.config/nushell
 
 - link:
     ~/.config/nvim:
@@ -25,7 +23,8 @@
       path: nushell/*
       glob: true
 
-    ~/.config/helix:
-      path: helix/*
-      glob: true
+    ~/.config/zellij/config.kdl:
+      path: zellij/config.kdl
 
+    ~/.config/helix/config.toml:
+      path: helix/config.toml
