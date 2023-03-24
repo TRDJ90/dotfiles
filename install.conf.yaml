@@ -9,8 +9,8 @@
     - ~/.config/nushell
 
 - link:
-    ~/.config/nvim:
-      path: nvim/*
+    ~/.config/nvim/lua/:
+      path: astronvim/user/*
       glob: true
 
     ~/.config/alacritty/alacritty.yml:
@@ -23,8 +23,9 @@
       path: nushell/*
       glob: true
 
-    ~/.config/zellij/config.kdl:
-      path: zellij/config.kdl
+    ~/.config/zellij/:
+      path: zellij/*
+      glob: true
 
     ~/.config/helix/config.toml:
       path: helix/config.toml

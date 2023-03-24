@@ -35,5 +35,5 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "120"
 
--- enable global status line 
+-- enable global status line
 vim.opt.laststatus = 3
