@@ -1,8 +1,8 @@
-theme = "github_dark_dimmed"
+theme = "onedarker_adjusted"
 
 [editor]
 line-number = "relative"
-rulers = [115]
+rulers = [85, 115]
 scrolloff = 5
 color-modes = true
 bufferline = "always"
@@ -10,7 +10,7 @@ bufferline = "always"
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
-select = "underline"
+select = "block"
 
 [editor.whitespace.render]
 space = "all"
@@ -19,7 +19,7 @@ newline = "none"
 
 [editor.indent-guides]
 render = true
-character = "╎"
+character = "┊"
 
 [editor.search]
 smart-case = true

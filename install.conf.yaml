@@ -9,10 +9,6 @@
     - ~/.config/nushell
 
 - link:
-    ~/.config/nvim/lua/:
-      path: astronvim/user/*
-      glob: true
-
     ~/.config/alacritty/alacritty.yml:
       path: alacritty/alacritty.yml
 
@@ -27,5 +23,6 @@
       path: zellij/*
       glob: true
 
-    ~/.config/helix/config.toml:
-      path: helix/config.toml
+    ~/.config/helix/:
+      path: helix/*
+      glob: true
