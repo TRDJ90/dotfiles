@@ -1,11 +1,23 @@
 return {
     -- Fuzzy Finder (files, lsp, etc)
     { 
-        'nvim-telescope/telescope.nvim', 
-        version = '*', 
-        dependencies = { 
-            'nvim-lua/plenary.nvim' 
-        } 
+        'nvim-telescope/telescope.nvim',
+        version = '*',
+        dependencies = {
+            'nvim-lua/plenary.nvim'
+        },
+        config = function()
+            require('telescope').setup {
+                defaults = {
+                    i = {
+                        ['<C-u>'] = false,
+                        ['<C-d>'] = false,
+                    },
+                },
+            }
+
+            pcall(require('telescope').load_extension, 'fzf')
+        end
     },
 
     -- Fuzzy Finder Algorithm which requires local dependencies to be built.
