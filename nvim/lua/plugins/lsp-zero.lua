@@ -56,9 +56,11 @@ return {
         -- This is where all the LSP shenanigans will live
 
             local lsp = require('lsp-zero')
+            local navic = require('nvim-navic')
 
             lsp.on_attach(function(client, bufnr)
                 lsp.default_keymaps({buffer = bufnr})
+                navic.attach(client, bufnr)
             end)
 
             lsp.ensure_installed({
@@ -88,14 +90,10 @@ return {
                 "marksman",
             })
 
-            -- Configure lua language server for neovim
+            -- Configure specific language server for neovim
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
-            lsp.setup()
-
-            
-            -- (Optional) Configure lua language server for neovim
             require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+            --require('lspconfig').
 
             lsp.setup()
         end

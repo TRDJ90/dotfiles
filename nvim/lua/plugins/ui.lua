@@ -25,10 +25,12 @@ return {
         'nvim-lualine/lualine.nvim',
         event = "VeryLazy",
         config = function()
+            local navic = require('nvim-navic')
+
             require('lualine').setup({
                 options = {
                     icons_enabled = true,
-                    theme = 'gruvbox',
+                    theme = 'seoul256',
                     component_separators = { left = '', right = ''},
                     section_separators = { left = '', right = ''},
                     disabled_filetypes = {
@@ -61,7 +63,18 @@ return {
                     lualine_z = {}
                 },
                 tabline = {},
-                winbar = {},
+                winbar = {
+                    lualine_c = {
+                        {
+                            function()
+                                return navic.get_location()
+                            end,
+                            cond = function()
+                                return navic.is_available()
+                            end
+                        }
+                    }
+                },
                 inactive_winbar = {},
                 extensions = {}
             })
@@ -79,4 +92,44 @@ return {
             show_current_context = false,
         },
     },
+
+    -- navic
+    {
+        'SmiteshP/nvim-navic',
+        config = function()
+            require('nvim-navic').setup {
+                highlight = true,
+                depth_limit = 5,
+                safe_output = true,
+                icons = {
+                    File = ' ',
+                    Module = ' ',
+                    Namespace = ' ',
+                    Package = ' ',
+                    Class = ' ',
+                    Method = ' ',
+                    Property = ' ',
+                    Field = ' ',
+                    Constructor = ' ',
+                    Enum = ' ',
+                    Interface = ' ',
+                    Function = ' ',
+                    Variable = ' ',
+                    Constant = ' ',
+                    String = ' ',
+                    Number = ' ',
+                    Boolean = ' ',
+                    Array = ' ',
+                    Object = ' ',
+                    Key = ' ',
+                    Null = ' ',
+                    EnumMember = ' ',
+                    Struct = ' ',
+                    Event = ' ',
+                    Operator = ' ',
+                    TypeParameter = ' '
+                }
+            }
+        end
+    }
 }
