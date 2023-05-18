@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ' '
 
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -37,3 +38,11 @@ vim.opt.colorcolumn = "120"
 
 -- enable global status line
 vim.opt.laststatus = 3
+
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.opt.clipboard = 'unnamedplus'
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'

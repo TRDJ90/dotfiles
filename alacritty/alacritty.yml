@@ -8,16 +8,16 @@ font:
 
 window:
   decorations: "full"
-  opacity: 1.00
+  opacity: 0.95
   padding:
-    x: 0
+    x: 4
     y: 0
 
 # github Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: "0x24292e"
+    background: "0x282C34"
     foreground: "0xd1d5da"
 
   # Normal colors

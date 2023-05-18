@@ -1,0 +1,5 @@
+inherits = "everblush"
+
+[palette]
+#foreground = "0xd1d5da" 
+background = "0x282C34"

@@ -1,20 +1,19 @@
 return {
-    {
-        "akinsho/bufferline.nvim",
-        event = "VeryLazy",
-        opts = {
+    'akinsho/bufferline.nvim', 
+    version = "*",
+    config = function()
+        require('bufferline').setup({
             options = {
-                always_show_bufferline = true,
                 offsets = {
                     {
-                        filetype = "neo-tree",
+                        filetype = "NvimTree",
                         text = "File Explorer",
-                        highlight = "Directory",
-                    },
+                        text_align = "center",
+                        separator = true,
+                    }
                 },
-                separator_style = "slope",
-            },
-            
-        },
-    },
+                separator_style = "slant",
+            }
+        })
+    end
 }

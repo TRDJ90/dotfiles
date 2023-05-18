@@ -1,35 +1,37 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        version = false,
         build = ":TSUpdate",
-        event = "BufReadPost",
-        config = function(_, opts)
-            require("nvim-treesitter.configs").setup(opts)
-        end,
+        event = { "BufReadPost", "BufNewFile" },
         opts = {
+            highlight = { enable = true },
             ensure_installed = {
-                -- TODO: Maybe place languages in a some config table so i have one place to defines languages...
+                "lua",
+                "c",
+                "c_sharp",
+                "rust",
+                "sql",
 
-                -- web
                 "html",
                 "css",
                 "typescript",
-                "json",
+                "javascript",
                 "vue",
-                -- backend
-                "c_sharp",
-                "rust",
-                -- Lua for nvim
-                "lua",
-                -- Mark up languages
-                "markdown",
-                "toml",
-                -- infra as code
+
+                "terraform",
                 "bicep",
-                "terraform"
+
+                "yaml",
+                "toml",
+                "markdown",
             },
-            additional_vim_regex_highlighting = false,
-            highlight = { enable = true }
-        }
-    }
+        },
+        config = function(_, opts)
+            require("nvim-treesitter.configs").setup(opts)
+        end
+    },
 }

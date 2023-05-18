@@ -7,8 +7,13 @@
     - ~/.config/alacritty
     - ~/.config/starship
     - ~/.config/nushell
+    - ~/.config/nvim
 
 - link:
+    ~/.config/nvim/:
+      path: nvim/**
+      glob: true
+
     ~/.config/alacritty/alacritty.yml:
       path: alacritty/alacritty.yml
 
@@ -26,3 +31,6 @@
     ~/.config/helix/:
       path: helix/*
       glob: true
+
+    ~/.tmux.conf:
+      path: tmux/tmux.conf
