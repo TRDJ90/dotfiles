@@ -71,8 +71,9 @@ return {
                             end,
                             cond = function()
                                 return navic.is_available()
-                            end
-                        }
+                            end,
+                            draw_empty = true,
+                        },
                     }
                 },
                 inactive_winbar = {},
@@ -131,5 +132,23 @@ return {
                 }
             }
         end
-    }
+    },
+
+    -- code symbols outline
+    {
+        'simrat39/symbols-outline.nvim',
+        config = function()
+            require('symbols-outline').setup()
+        end
+    },
+
+    -- UI elements, icons etc
+    {'nvim-lua/plenary.nvim'},
+
+    {
+        'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('nvim-web-devicons').setup({})
+        end
+    },
 }

@@ -1,7 +1,7 @@
 return {
     {
         'projekt0n/github-nvim-theme',
-        --priority = 1000,
+        priority = 1000,
         lazy = false,
         config = function()
             require('github-theme').setup({
@@ -10,7 +10,7 @@ return {
                 }
             })
 
-            --vim.cmd.colorscheme 'github_dark_dimmed'
+            vim.cmd.colorscheme 'github_dark_dimmed'
         end
     },
     {
@@ -31,7 +31,7 @@ return {
                 terminalColors = true,       -- define vim.g.terminal_color_{0,17}
             })
 
-            vim.cmd.colorscheme 'kanagawa-dragon'
+            --vim.cmd.colorscheme 'kanagawa-dragon'
         end
     }
 }
