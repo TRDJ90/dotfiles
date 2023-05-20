@@ -13,7 +13,13 @@ return {
                             text = "File Explorer",
                             text_align = "center",
                             separator = true,
-                        }
+                        },
+                        {
+                            filetype = "neo-tree",
+                            text = "Explorer",
+                            text_align = "center",
+                            separator = true,
+                        },
                     },
                 }
             })
@@ -46,6 +52,7 @@ return {
                         winbar = 1000,
                     }
                 },
+
                 sections = {
                     lualine_a = {'mode'},
                     lualine_b = {'branch', 'diff', 'diagnostics'},
@@ -144,6 +151,7 @@ return {
 
     -- UI elements, icons etc
     {'nvim-lua/plenary.nvim'},
+    {'MunifTanjim/nui.nvim'},
 
     {
         'nvim-tree/nvim-web-devicons',
@@ -151,4 +159,13 @@ return {
             require('nvim-web-devicons').setup({})
         end
     },
+
+    -- Colorizer
+    {
+        'Nvchad/nvim-colorizer.lua',
+        config = function()
+            require('colorizer').setup()
+        end
+    },
+
 }

@@ -2,12 +2,13 @@ return {
     -- Fuzzy Finder (files, lsp, etc)
     { 
         'nvim-telescope/telescope.nvim',
-        version = '*',
+        tag = '0.1.1',
         dependencies = {
             'nvim-lua/plenary.nvim'
         },
         config = function()
             require('telescope').setup {
+                border = false,
                 defaults = {
                     i = {
                         ['<C-u>'] = false,

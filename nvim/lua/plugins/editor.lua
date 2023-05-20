@@ -11,15 +11,33 @@ return {
     {
         'lewis6991/gitsigns.nvim',
         config = function()
-            require('gitsigns').setup()
+            require('gitsigns').setup({
+                numhl = true,
+            })
         end
     },
 
-    -- nvim tree aka file explorer
+    -- auto pairs
     {
-        'nvim-tree/nvim-tree.lua',
+        'windwp/nvim-autopairs',
         config = function()
-            require('nvim-tree').setup()
+            require('nvim-autopairs').setup({})
+        end
+    },
+
+    -- neo-tree
+    {
+        'nvim-neo-tree/neo-tree.nvim',
+        config = function()
+            vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1]])
+
+            require('neo-tree').setup({
+                source_selector = {
+                    winbar = true,
+                    statusline = false,
+                }
+            })
         end
     }
 }
+
