@@ -17,12 +17,11 @@
     ~/.config/alacritty/alacritty.yml:
       path: alacritty/alacritty.yml
 
+    ~/.config/fish/config.fish:
+      path: fish/config.fish
+  
     ~/.config/starship/starship.toml:
       path: starship/starship.toml
-
-    ~/Library/Application Support/nushell:
-      path: nushell/*
-      glob: true
 
     ~/.config/zellij/:
       path: zellij/*
@@ -32,5 +31,14 @@
       path: helix/*
       glob: true
 
-    ~/.tmux.conf:
-      path: tmux/tmux.conf
+    ~/.config/yabai/yabairc:
+      path: yabai/yabairc
+
+    ~/.config/skhd/skhdrc:
+      path: skhd/skhdrc
+
+    ~/.amethyst.yml:
+      path: amethyst/amethyst.yml
+
+    ~/.wezterm.lua:
+      path: wezterm/wezterm.lua

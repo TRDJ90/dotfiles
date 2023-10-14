@@ -1,28 +1,20 @@
--- [[ Basic Keymaps ]]
-
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
--- See `:help telescope.builtin`
+-- Telescope keymaps
 vim.keymap.set('n', '<leader>?',  require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', require('telescope.builtin').live_grep, { desc = '[/] Fuzzy search current working directory' })
-
+vim.keymap.set('n', '<leader>/',  require('telescope.builtin').live_grep, { desc = '[/] Fuzzy search current working directory' })
 vim.keymap.set('n', '<leader>tf', require('telescope.builtin').find_files, { desc = 'Telescope search Files' })
 vim.keymap.set('n', '<leader>th', require('telescope.builtin').help_tags, { desc = 'Telescope search Help' })
 vim.keymap.set('n', '<leader>tw', require('telescope.builtin').grep_string, { desc = 'Telescope search Word' })
 vim.keymap.set('n', '<leader>tg', require('telescope.builtin').live_grep, { desc = 'Telescope Grep' })
 vim.keymap.set('n', '<leader>td', require('telescope.builtin').diagnostics, { desc = 'Telescope Diagnostics' })
 vim.keymap.set('n', '<leader>tb', require('telescope.builtin').buffers, { desc = 'Telescope Buffers'})
+vim.keymap.set('n', '<leader>tk', require('telescope.builtin').keymaps, { desc = 'Telescope keybindings'})
 
---code symbols outline
-vim.keymap.set('n', '<leader>cso', ':SymbolsOutline<CR>', { desc = '[c] Symbols Outline'})
+-- window management 
+vim.keymap.set('n', '<leader>w-', ':vsplit<CR>', { desc = 'split vertical' })
+vim.keymap.set('n', '<leader>w|', ':split<CR>', { desc = 'split horizontal' })
+vim.keymap.set('n', '<leader>wc', '<c-w>c', { desc = 'close window' })
 
--- nerd tree toggle
-vim.keymap.set('n', '<leader>e', ':NeoTreeFocusToggle<CR>', { desc = '[e] Toggle Explorer' })
+vim.keymap.set('n', '<leader>wh', '<c-w>h', { desc = 'move left' })
+vim.keymap.set('n', '<leader>wl', '<c-w>l', { desc = 'move right' })
+vim.keymap.set('n', '<leader>wk', '<c-w>k', { desc = 'move up' })
+vim.keymap.set('n', '<leader>wj', '<c-w>j', { desc = 'move down' })

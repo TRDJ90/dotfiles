@@ -1,30 +1,29 @@
 return {
-    -- bufferline
+    -- UI elements, icons etc
+    {'nvim-lua/plenary.nvim'},
+
+    {'MunifTanjim/nui.nvim'},
+
+    {
+        'nvim-tree/nvim-web-devicons',
+        config = function()
+            require('nvim-web-devicons').setup({})
+        end
+    },
+
+    -- Bufferline
     {
         'akinsho/bufferline.nvim',
         event = "VeryLazy",
         version = "*",
         config = function()
             require('bufferline').setup({
-                options = {
-                    offsets = {
-                        {
-                            filetype = "NvimTree",
-                            text = "File Explorer",
-                            text_align = "center",
-                            separator = true,
-                        },
-                        {
-                            filetype = "neo-tree",
-                            text = "Explorer",
-                            text_align = "center",
-                            separator = true,
-                        },
-                    },
-                }
-            })
+            options = {
+            }
+        })
         end
     },
+
 
     -- statusline 
     {
@@ -37,8 +36,8 @@ return {
                 options = {
                     icons_enabled = true,
                     theme = 'seoul256',
-                    component_separators = { left = '', right = ''},
-                    section_separators = { left = '', right = ''},
+                    component_separators = { left = '', right = ''},
+                    section_separators = { left = '', right = ''},
                     disabled_filetypes = {
                         statusline = {},
                         winbar = {},
@@ -55,11 +54,14 @@ return {
 
                 sections = {
                     lualine_a = {'mode'},
-                    lualine_b = {'branch', 'diff', 'diagnostics'},
-                    lualine_c = {'filename'},
-                    lualine_x = {'encoding', 'fileformat', 'filetype'},
-                    lualine_y = {'progress'},
-                    lualine_z = {'location'}
+                    lualine_b = {'branch'},
+                    lualine_c = {{
+                        'buffers',
+                        use_mode_colors = false,
+                    }},
+                    lualine_x = {'encoding', 'fileformat', 'filetype', 'diff', 'diagnostics'},
+                    lualine_y = {},
+                    lualine_z = {'datetime'}
                 },
                 inactive_sections = {
                     lualine_a = {},
@@ -89,18 +91,6 @@ return {
         end
     },
 
-    -- indent guides for neovim
-    {
-        'lukas-reineke/indent-blankline.nvim',
-        event = { "BufReadPost", "BufNewFile" },
-        opts = {
-            char = '┊',
-            filetype_exclude = { "help", "alpha", "dashboard", "NvimTree", "Trouble", "lazy", "mason" },
-            show_trailing_blankline_indent = false,
-            show_current_context = false,
-        },
-    },
-
     -- navic
     {
         'SmiteshP/nvim-navic',
@@ -109,6 +99,10 @@ return {
                 highlight = true,
                 depth_limit = 5,
                 safe_output = true,
+                padding = {
+                    left = 0,
+                    right = 0,
+                },
                 icons = {
                     File = ' ',
                     Module = ' ',
@@ -140,32 +134,4 @@ return {
             }
         end
     },
-
-    -- code symbols outline
-    {
-        'simrat39/symbols-outline.nvim',
-        config = function()
-            require('symbols-outline').setup()
-        end
-    },
-
-    -- UI elements, icons etc
-    {'nvim-lua/plenary.nvim'},
-    {'MunifTanjim/nui.nvim'},
-
-    {
-        'nvim-tree/nvim-web-devicons',
-        config = function()
-            require('nvim-web-devicons').setup({})
-        end
-    },
-
-    -- Colorizer
-    {
-        'Nvchad/nvim-colorizer.lua',
-        config = function()
-            require('colorizer').setup()
-        end
-    },
-
 }

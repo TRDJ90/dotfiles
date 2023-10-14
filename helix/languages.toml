@@ -1,0 +1,11 @@
+[language-server.emmet-language-server]
+args = ["--stdio"]
+command = "emmet-language-server"
+
+[[language]]
+name = "html"
+language-servers = ["tailwindcss-ls", "vscode-html-language-server", "emmet-language-server"]
+
+[[language]]
+name = "css"
+language-servers = ["tailwindcss-ls", "vscode-css-language-server"]

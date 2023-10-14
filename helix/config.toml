@@ -1,11 +1,13 @@
-theme = "onedark"
+theme = "gruvbox_transparent"
 
 [editor]
 line-number = "relative"
 rulers = [85, 115]
-scrolloff = 5
-color-modes = true
+scrolloff = 8
+true-color = true
 bufferline = "always"
+gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+
 
 [editor.cursor-shape]
 insert = "bar"
@@ -24,3 +26,19 @@ character = "┊"
 [editor.search]
 smart-case = true
 wrap-around = false
+
+[editor.statusline]
+left = ["mode", "file-type", "file-name", "spinner"]
+center = []
+right = ["diagnostics", "file-encoding", "selections", "position"]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+enable = true
+display-messages = true
+display-inlay-hints = true
+snippets = true
+goto-reference-include-declaration = true

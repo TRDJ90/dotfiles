@@ -1,0 +1,29 @@
+# change window focus 
+hyper - j : yabai -m window --focus south
+hyper - k : yabai -m window --focus north
+hyper - h : yabai -m window --focus west
+hyper - l : yabai -m window --focus east
+
+# change focus between displays
+alt - s : yabai -m display --focus west
+alt - g : yabai -m display --focus east
+
+# zoom on window
+hyper - m : yabai -m window --toggle zoom-fullscreen
+hyper - e : yabai -m space --balance
+
+# toggle to desktop 
+hyper - d : yabai -m space --toggle show-desktop
+
+# swap windows
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
+
+# kill focused window
+hyper - q : yabai -m window --close
+
+# quick application hotkeys
+cmd -return : open -na 'Alacritty'
+cmd - 0 : open -na 'Brave Browser'
