@@ -10,13 +10,6 @@
     - ~/.config/nvim
 
 - link:
-    ~/.config/nvim/:
-      path: nvim/**
-      glob: true
-
-    ~/.config/alacritty/alacritty.yml:
-      path: alacritty/alacritty.yml
-
     ~/.config/fish/config.fish:
       path: fish/config.fish
   
@@ -31,6 +24,10 @@
       path: helix/*
       glob: true
 
+    ~/.config/nvim/:
+      path: nvim/*
+      glob: true
+    
     ~/.config/yabai/yabairc:
       path: yabai/yabairc
 
@@ -42,3 +39,7 @@
 
     ~/.wezterm.lua:
       path: wezterm/wezterm.lua
+
+    ~/.config/nvim/:
+      path: nvim/*
+      glob: true 

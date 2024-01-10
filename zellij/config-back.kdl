@@ -1,32 +1,27 @@
-simplified_ui true
-pane_frames true
-
-session_serialization true
-serialize_pane_viewport true
-
-mouse_mode true
-scroll_buffer_size 10000
-
-default_layout "compact"
-
-keybinds {
-    locked {
-        bind "Ctrl g" { SwitchToMode "Normal"; }
+keybinds clear-defaults=true {
+    normal {
+        bind "Ctrl b" { SwitchToMode "tmux"; }
     }
+
     resize {
         bind "h" "Left" { Resize "Increase Left"; }
         bind "j" "Down" { Resize "Increase Down"; }
         bind "k" "Up" { Resize "Increase Up"; }
         bind "l" "Right" { Resize "Increase Right"; }
+        bind "H" { Resize "Decrease Left"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "L" { Resize "Decrease Right"; }
+        bind "=" "+" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
     }
+    
     pane {
-        bind "Ctrl p" { SwitchToMode "Normal"; }
         bind "h" "Left" { MoveFocus "Left"; }
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
         bind "k" "Up" { MoveFocus "Up"; }
         bind "p" { SwitchFocus; }
-        bind "n" { NewPane; SwitchToMode "Normal"; }
         bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
@@ -36,14 +31,7 @@ keybinds {
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
-    move {
-        bind "n" "Tab" { MovePane; }
-        bind "p" { MovePaneBackwards; }
-        bind "h" "Left" { MovePane "Left"; }
-        bind "j" "Down" { MovePane "Down"; }
-        bind "k" "Up" { MovePane "Up"; }
-        bind "l" "Right" { MovePane "Right"; }
-    }
+
     tab {
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
@@ -65,8 +53,10 @@ keybinds {
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
         bind "Tab" { ToggleTab; }
     }
-
+    
     session {
+        bind "Ctrl o" { SwitchToMode "Normal"; }
+        bind "Ctrl s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
             LaunchOrFocusPlugin "zellij:session-manager" {
@@ -76,32 +66,22 @@ keybinds {
             SwitchToMode "Normal"
         }
     }
+
     tmux {
-        // Switch to modes
         bind "p" { SwitchToMode "pane"; }
-        bind "t" { SwitchToMode "tab"; }
         bind "n" { SwitchToMode "resize"; }
-        bind "g" { SwitchToMode "locked"; }
-        bind "s" { SwitchToMode "session"; }
+        bind "t" { SwitchToMode "tab"; }
+        bind "o" { SwitchToMode "session"; }
+        bind "q" { Quit; }
+        bind "d" { Detach; }
     }
-    shared_except "locked" {
-        bind "Ctrl g" { SwitchToMode "Locked"; }
-        bind "Ctrl q" { Quit; }
-        bind "Alt n" { NewPane; }
-        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
-        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
-        bind "Alt =" "Alt +" { Resize "Increase"; }
-        bind "Alt -" { Resize "Decrease"; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
-    }
+
     shared_except "normal" "locked" {
-        bind "Esc" { SwitchToMode "Normal"; }
+        bind "Enter" "Space" "Esc" { SwitchToMode "Normal"; }
     }
-    shared_except "tmux" "locked" {
-        bind "Alt s" { SwitchToMode "Tmux"; }
+    
+    shared_except "normal" "entersearch" "renametab" "renamepane" {
+        bind "Esc" { SwitchToMode "normal"; }
     }
 }
 
@@ -113,3 +93,22 @@ plugins {
     session-manager { path "session-manager"; }
 }
 
+default_layout "basic"
+simplified_ui true
+
+theme "nord"
+themes {
+    nord {
+        fg "#D8DEE9"
+        bg "#2E3440"
+        black "#3B4252"
+        red "#BF616A"
+        green "#A3BE8C"
+        yellow "#EBCB8B"
+        blue "#81A1C1"
+        magenta "#B48EAD"
+        cyan "#88C0D0"
+        white "#E5E9F0"
+        orange "#D08770"
+    }
+}

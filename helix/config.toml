@@ -1,13 +1,18 @@
-theme = "gruvbox_transparent"
+theme = "custom_theme"
 
 [editor]
 line-number = "relative"
-rulers = [85, 115]
+rulers = [95]
 scrolloff = 8
 true-color = true
 bufferline = "always"
-gutters = ["diff", "diagnostics", "line-numbers", "spacer"]
+color-modes = true
 
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+[editor.gutters.line-numbers]
+min-width = 3
 
 [editor.cursor-shape]
 insert = "bar"
@@ -28,7 +33,7 @@ smart-case = true
 wrap-around = false
 
 [editor.statusline]
-left = ["mode", "file-type", "file-name", "spinner"]
+left = ["mode", "file-type", "file-name", "file-modification-indicator", "spinner"]
 center = []
 right = ["diagnostics", "file-encoding", "selections", "position"]
 separator = "|"
@@ -42,3 +47,9 @@ display-messages = true
 display-inlay-hints = true
 snippets = true
 goto-reference-include-declaration = true
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+ignore = true
+max-depth = 5

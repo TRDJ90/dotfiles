@@ -2,10 +2,26 @@
 args = ["--stdio"]
 command = "emmet-language-server"
 
+[language-server.tailwind-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+[language-server.tailwind-ls.config]
+tailwindCSS = { experimental = { classRegex = ["class=\"(.*)\""]}}
+
+[language-server.rust-analyzer.config]
+cargo = { buildScripts = { enable = true }, features = "all" }
+check = { features = "all" }
+procMacro = { enable = true }
+
+#[language-server.rust-analyzer.config.inlayHints]
+#lifetimeElisionHints = { enable = false, useParameterNames = false}
+
 [[language]]
 name = "html"
-language-servers = ["tailwindcss-ls", "vscode-html-language-server", "emmet-language-server"]
+language-servers = ["tailwind-ls", "vscode-html-language-server", "emmet-language-server"]
 
 [[language]]
 name = "css"
-language-servers = ["tailwindcss-ls", "vscode-css-language-server"]
+language-servers = ["tailwind-ls", "vscode-css-language-server"]
+
