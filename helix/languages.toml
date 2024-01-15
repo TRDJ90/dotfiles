@@ -14,6 +14,15 @@ cargo = { buildScripts = { enable = true }, features = "all" }
 check = { features = "all" }
 procMacro = { enable = true }
 
+[language-server.omnisharp-ls]
+command = "dotnet"
+args = [ "/Users/thubie/tools/language-servers/omnisharp/OmniSharp.dll"]
+
+[[language]]
+name = "c-sharp"
+language-servers = ["csharp-ls"]
+
+
 #[language-server.rust-analyzer.config.inlayHints]
 #lifetimeElisionHints = { enable = false, useParameterNames = false}
 

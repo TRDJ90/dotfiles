@@ -1,5 +1,4 @@
 local wezterm = require 'wezterm'
-local muxer = wezterm.mux
 local action = wezterm.action
 
 -- This table will hold the configuration.
@@ -19,11 +18,11 @@ config.enable_tab_bar = false
 config.tab_bar_at_bottom = false
 
 config.font = wezterm.font 'FiraCode Nerd Font Mono'
-config.font_size = 15
+config.font_size = 14
 config.allow_square_glyphs_to_overflow_width = 'WhenFollowedBySpace'
 
 config.window_padding = {
-  left = 0, 
+  left = 0,
   right = 0,
   top = 0,
   bottom = 0,
