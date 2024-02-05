@@ -18,13 +18,10 @@ procMacro = { enable = true }
 command = "dotnet"
 args = [ "/Users/thubie/tools/language-servers/omnisharp/OmniSharp.dll"]
 
+#omnisharp doesn't work sadgg...
 [[language]]
 name = "c-sharp"
 language-servers = ["csharp-ls"]
-
-
-#[language-server.rust-analyzer.config.inlayHints]
-#lifetimeElisionHints = { enable = false, useParameterNames = false}
 
 [[language]]
 name = "html"
