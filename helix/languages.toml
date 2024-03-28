@@ -30,4 +30,3 @@ language-servers = ["tailwind-ls", "vscode-html-language-server", "emmet-languag
 [[language]]
 name = "css"
 language-servers = ["tailwind-ls", "vscode-css-language-server"]
-

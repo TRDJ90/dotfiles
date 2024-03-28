@@ -10,7 +10,7 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.window_background_opacity = 0.80
+config.window_background_opacity = 1.00
 config.macos_window_background_blur = 25
 config.color_scheme = 'Hacktober'
 
