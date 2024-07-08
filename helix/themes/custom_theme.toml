@@ -1,2 +1,13 @@
 inherits = "gruber-darker"
-"ui.background" = {}
+#"ui.background" = {}
+"ui.gutter" = { bg = "#151515"}
+
+
+
+
+
+
+
+
+
+
