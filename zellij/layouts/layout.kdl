@@ -1,0 +1,29 @@
+layout {
+    pane split_direction="vertical" {
+        pane
+    }
+
+    pane size=1 borderless=true {
+        plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+            format_left  "{mode}#[fg=black,bg=#FFDD33,bold]{session}  #[fg=#FFDD33,bg=#303030]{tabs}"
+            format_right "#[fg=#303030,bg=#151515]{datetime}"
+            format_space "#[bg=#303030]"
+
+            hide_frame_for_single_pane "true"
+
+            mode_normal  "#[bg=#FFDD33] "
+
+            tab_normal              "#[fg=#303030,bg=#202020] #[fg=#000000,bg=#202020]{index}  {name} #[fg=#202020,bg=#303030]"
+            tab_normal_fullscreen   "#[fg=#202020,bg=#303030] {index} {name} [] "
+            tab_normal_sync         "#[fg=#202020,bg=#303030] {index} {name} <> "
+            tab_active              "#[fg=#303030,bg=#ffffff,bold,italic] {index}  {name} #[fg=#ffffff,bg=#303030]"
+            tab_active_fullscreen   "#[fg=#9399B2,bg=#303030,bold,italic] {index} {name} [] "
+            tab_active_sync         "#[fg=#9399B2,bg=#303030,bold,italic] {index} {name} <> "
+
+
+            datetime          "#[fg=white,bg=#151515,bold] {format} "
+            datetime_format   "%A, %d %b %Y %H:%M"
+            datetime_timezone "Europe/Berlin"
+        }
+    }
+}

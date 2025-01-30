@@ -14,15 +14,6 @@ cargo = { buildScripts = { enable = true }, features = "all" }
 check = { features = "all" }
 procMacro = { enable = true }
 
-[language-server.omnisharp-ls]
-command = "dotnet"
-args = [ "/Users/thubie/tools/language-servers/omnisharp/OmniSharp.dll"]
-
-#omnisharp doesn't work sadgg...
-[[language]]
-name = "c-sharp"
-language-servers = ["csharp-ls"]
-
 [[language]]
 name = "html"
 language-servers = ["tailwind-ls", "vscode-html-language-server", "emmet-language-server"]

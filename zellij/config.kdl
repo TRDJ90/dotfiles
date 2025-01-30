@@ -1,5 +1,5 @@
 simplified_ui true
-pane_frames true
+pane_frames false
 
 session_serialization true
 serialize_pane_viewport true
@@ -7,7 +7,7 @@ serialize_pane_viewport true
 mouse_mode true
 scroll_buffer_size 10000
 
-default_layout "compact"
+default_layout "layout"
 
 keybinds {
     locked {
@@ -105,11 +105,27 @@ keybinds {
     }
 }
 
+// Plugin aliases - can be used to change the implementation of Zellij
+// changing these requires a restart to take effect
 plugins {
-    tab-bar { path "tab-bar"; }
-    status-bar { path "status-bar"; }
-    strider { path "strider"; }
-    compact-bar { path "compact-bar"; }
-    session-manager { path "session-manager"; }
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    compact-bar location="zellij:compact-bar"
+    session-manager location="zellij:session-manager"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    configuration location="zellij:configuration"
+    plugin-manager location="zellij:plugin-manager"
+}
+
+// Plugins to load in the background when a new session starts
+load_plugins {
+  // "file:/path/to/my-plugin.wasm"
+  // "https://example.com/my-plugin.wasm"
 }
 

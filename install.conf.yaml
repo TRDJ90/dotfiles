@@ -8,6 +8,7 @@
     - ~/.config/starship
     - ~/.config/nushell
     - ~/.config/nvim
+    - ~/.config/ghostty
 
 - link:
     ~/.config/fish/config.fish:
@@ -24,6 +25,9 @@
       path: helix/*
       glob: true
 
+    ~/.config/ghostty/config:
+      path: ghostty/config
+      
     ~/.config/nvim/:
       path: nvim/*
       glob: true
