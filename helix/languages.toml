@@ -14,6 +14,10 @@ cargo = { buildScripts = { enable = true }, features = "all" }
 check = { features = "all" }
 procMacro = { enable = true }
 
+[language-server.csharp]
+command = "csharp-language-server"
+
+
 [[language]]
 name = "html"
 language-servers = ["tailwind-ls", "vscode-html-language-server", "emmet-language-server"]
@@ -21,3 +25,15 @@ language-servers = ["tailwind-ls", "vscode-html-language-server", "emmet-languag
 [[language]]
 name = "css"
 language-servers = ["tailwind-ls", "vscode-css-language-server"]
+
+[[language]]
+name = "c-sharp"
+language-servers = ["csharp"]
+# scope = "source.csharp"
+# injection-regex = "c-?sharp"
+# file-types = ["cs", "csx", "cake"]
+# roots = ["sln", "csproj"]
+# comment-token = "//"
+# block-comment-tokens = { start = "/*", end = "*/" }
+# indent = { tab-width = 4, unit = "\t" }
+# language-servers = [ "csharp-ls" ]

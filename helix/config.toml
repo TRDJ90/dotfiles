@@ -37,14 +37,20 @@ wrap-around = false
 left = [
   "mode",
   "spacer",
-  "version-control",
-  "file-name",
-  "file-modification-indicator",
-  "spinner",
+  "version-control"
 ]
-
-center = []
-right = ["diagnostics", "file-encoding", "file-type", "selections", "position"]
+center = [
+  "file-name",
+  "file-modification-indicator", 
+]
+right = [
+  "diagnostics",
+  "spinner",
+  "file-type",
+  "position",
+  "position-percentage",
+  "spacer",
+]
 separator = "|"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -74,3 +80,11 @@ C-k = [
   "paste_before",
 ]
 esc = ["collapse_selection", "keep_primary_selection"]
+
+C-y = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]

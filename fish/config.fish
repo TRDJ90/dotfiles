@@ -9,14 +9,23 @@ fish_add_path ~/tools/bin
 fish_add_path ~/tools/wgsl-analyzer/target/release
 fish_add_path /Users/thubie/VulkanSDK/1.3.296.0/macOS/bin
 fish_add_path /opt/homebrew/opt/llvm/bin
+fish_add_path ~/tools/emsdk
+fish_add_path ~/tools/emsdk/upstream/emscripten
+fish_add_path ~/go/bin
 
-set -Ux VULKAN_SDK /Users/thubie/VulkanSDK/1.3.296.0/macOS
-set -Ux DYLD_LIBRARY_PATH /Users/thubie/VulkanSDK/1.3.296.0/macOS/lib
-set -Ux VK_ICD_FILENAMES /Users/thubie/VulkanSDK/1.3.296.0/macOS/share/vulkan/icd.d/MoltenVK_icd.json
-set -Ux VK_LAYER_PATH /Users/thubie/VulkanSDK/1.3.296.0/macOS/share/vulkan/explicit_layer.d
-set -Ux VK_ADD_LAYER_PATH /Users/thubie/VulkanSDK/1.3.296.0/macOS/share/vulkan/explicit_layer.d/
+# set -Ux VULKAN_SDK /Users/thubie/VulkanSDK/1.4.309.0/macOS
+# set -Ux DYLD_LIBRARY_PATH /Users/thubie/VulkanSDK/1.3.296.0/macOS/lib
+# set -Ux VK_ICD_FILENAMES /Users/thubie/VulkanSDK/1.3.296.0/macOS/share/vulkan/icd.d/MoltenVK_icd.json
+# set -Ux VK_LAYER_PATH /Users/thubie/VulkanSDK/1.3.296.0/macOS/share/vulkan/explicit_layer.d
+# set -Ux VK_ADD_LAYER_PATH /Users/thubie/VulkanSDK/1.3.296.0/macOS/share/vulkan/explicit_layer.d/
 
-#set -Ux VK_LOADER_DEBUG driver
+set -Ux VULKAN_SDK /Users/thubie/VulkanSDK/1.4.309.0/macOS
+set -Ux DYLD_LIBRARY_PATH $VULKAN_SDK/lib
+set -Ux VK_ICD_FILENAMES $VULKAN_SDK/share/vulkan/icd.d/MoltenVK_icd.json
+set -Ux VK_LAYER_PATH $VULKAN_SDK/share/vulkan/explicit_layer.d
+set -Ux VK_ADD_LAYER_PATH $VULKAN_SDK/share/vulkan/explicit_layer.d/
+
+set -Ux VK_LOADER_DEBUG driver
 
 alias ga="git add"
 alias gc="git commit"
@@ -45,6 +54,9 @@ function ls
     eza --icons=always
 end
 
-source ~/projects/emsdk/emsdk_env.fish
+# source ~/projects/emsdk/emsdk_env.fish
 
 clear
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish

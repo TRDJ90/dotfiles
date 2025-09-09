@@ -7,8 +7,9 @@
     - ~/.config/alacritty
     - ~/.config/starship
     - ~/.config/nushell
-    - ~/.config/nvim
     - ~/.config/ghostty
+    - ~/.config/nushell
+    - ~/.config/wezterm
 
 - link:
     ~/.config/fish/config.fish:
@@ -21,6 +22,10 @@
       path: zellij/*
       glob: true
 
+    ~/.config/nushell/:
+      path: nushell/*
+      glob: true
+
     ~/.config/helix/:
       path: helix/*
       glob: true
@@ -28,9 +33,8 @@
     ~/.config/ghostty/config:
       path: ghostty/config
       
-    ~/.config/nvim/:
-      path: nvim/*
-      glob: true
+    ~/.config/wezterm/wezterm.lua:
+      path: wezterm/wezterm.lua
     
     ~/.config/yabai/yabairc:
       path: yabai/yabairc
@@ -40,10 +44,3 @@
 
     ~/.amethyst.yml:
       path: amethyst/amethyst.yml
-
-    ~/.wezterm.lua:
-      path: wezterm/wezterm.lua
-
-    ~/.config/nvim/:
-      path: nvim/*
-      glob: true 
